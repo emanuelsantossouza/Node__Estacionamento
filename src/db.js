@@ -1,12 +1,15 @@
 const mysql = require('mysql2');
 
+let port = '52159'
+
+
 const connection = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    database: process.env.DB_NAME,
-    password: process.env.DB_PASS,
-    port: process.env.DB_PORT,
-    uri: process.env.DB_URI
+    host: `monorail.proxy.rlwy.net`,
+    user: 'root',
+    database: 'railway',
+    password: '35DehgGGC1db4gBC15CCegD34bgAfe6f',
+    port: port,
+    uri: 'mysql://root:35DehgGGC1db4gBC15CCegD34bgAfe6f@monorail.proxy.rlwy.net:52159/railway'
 });
 
 connection.connect((err) => {

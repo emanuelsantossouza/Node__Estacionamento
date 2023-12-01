@@ -1,4 +1,4 @@
-require('dotenv').config({ path: 'variaveis.env' });
+require('dotenv').config({ path: './src/variaveis.env' });
 
 const express = require('express');
 const cors = require('cors'); // Permite acesso para autorizar o uso da API
