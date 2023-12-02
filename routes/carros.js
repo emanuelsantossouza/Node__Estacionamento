@@ -6,7 +6,11 @@ const CarroController = require("../controllers/carroController");
 carros.get("/carros", async function (req, res) {
 
     console.log("Entrou na funcção carros router");
-    let buscaCarros = await CarroController.buscarTodos;
+    let buscaCarros = await CarroController.buscarTodos().catch((error) => {
+        console.log("Erro ao buscar carros");
+        console.log(error);
+
+    });
     console.log(buscaCarros);
 
     res.json(buscaCarros);
