@@ -1,12 +1,18 @@
-const express = require('express');
-const router = express.Router();
+//routing for local development server (devServer.js)
 
-const CarrosController = require('../controllers/CarroController');
+const routes = require("express").Router();
 
-router.get('/carros', CarrosController.buscarTodos);
-router.get('/carro/:id', CarrosController.buscarUm);
-router.post('/carro', CarrosController.inserir);
-router.put('/carro/:id', CarrosController.alterar);
-router.delete('/carro/:id', CarrosController.excluir);
+const carro = require("./carro");
+const carros = require("./carros");
 
-module.exports = router;
+routes.get("/", async function (req, res) {
+    //homepage route returns some HTML
+    res.send(`<h1>Reached home!</h1> 
+            <br>
+            <a href='/carros'>Carros</a>`);
+});
+
+routes.use("/", carro);
+routes.use("/", carros);
+
+module.exports = routes;

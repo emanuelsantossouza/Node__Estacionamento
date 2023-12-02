@@ -1,6 +1,6 @@
-const app = require('./app');
-const rota = require('./routes/carros');
+const app = require("../app");
+const route = require("../routes/carros");
 
-app.use('/carros', rota);
+app.use("/api/", route);
 
 module.exports = app;
