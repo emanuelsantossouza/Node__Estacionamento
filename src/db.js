@@ -7,9 +7,9 @@ const connection = mysql.createConnection({
     host: `monorail.proxy.rlwy.net`,
     user: 'root',
     database: 'railway',
-    password: '35DehgGGC1db4gBC15CCegD34bgAfe6f',
-    port: port,
-    uri: 'mysql://root:35DehgGGC1db4gBC15CCegD34bgAfe6f@monorail.proxy.rlwy.net:52159/railway'
+    password: 'g3Ce36afGcgHA-fCAfhDgg-3C6ddC2C1',
+    port: 21720,
+    uri: 'mysql://root:g3Ce36afGcgHA-fCAfhDgg-3C6ddC2C1@mysql.railway.internal:3306/railway'
 });
 
 connection.connect((err) => {
