@@ -1,16 +1,14 @@
 //functionality of a route
 
 const carros = require("express").Router();
-const CarroController = require("../controllers/carroController");
 const CarroService = require("../services/CarroService");
 
 carros.get("/carros", async function (req, res) {
     console.log("Entrou na funcção carros router");
 
     try {
-        let buscaCarros = await CarroController.buscarTodos();
-        let CarroService = await CarroService.buscarTodos();
-
+        let bucarCarros = await CarroService.buscarTodos();
+        console.log(`${bucarCarros}`)
         
         return res.json(buscaCarros);
 
