@@ -8,8 +8,7 @@ module.exports = {
 
 
         try {
-            let carros = await CarroService.buscarTodos();
-
+           
             // Construa o objeto JSON de resposta
             let json = {
                 error: '',
@@ -20,7 +19,7 @@ module.exports = {
             };
 
             console.log(json.result);
-            return res(json);
+            return res.json(json);
         } catch (error) {
             console.log("Erro ao buscar carros");
             console.log(error);
