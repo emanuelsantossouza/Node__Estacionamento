@@ -1,6 +1,6 @@
 const app = require('./app');
-const rota = require('./routes/carros');
 
-app.use('/carros', rota);
+const server = require('../server');
 
 module.exports = app;
+module.exports = server;
