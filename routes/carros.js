@@ -9,12 +9,14 @@ carros.get("/carros", async function (req, res) {
     try {
         let buscaCarros = await CarroController.buscarTodos()
         console.log(error);
-        res.json(buscaCarros);
+        
+        return res.json(buscaCarros);
 
     } catch (error) {
         console.log(error);
         res.json({ error: error });
-        res.status(500).json({ error: 'Erro ao buscar carros' });
+        
+        return res.status(500).json({ error: 'Erro ao buscar carros' });
     };
 });
 
