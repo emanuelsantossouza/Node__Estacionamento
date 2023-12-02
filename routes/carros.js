@@ -7,11 +7,7 @@ carros.get("/carros", async function (req, res) {
     console.log("Entrou na funcção carros router");
 
     try {
-        let buscaCarros = await CarroController.buscarTodos()
-            .then((carros) => {
-            console.log(`Aquii o resultadoooo______________ ${carros}`);
-        })
-        console.log(error);
+        let buscaCarros = await CarroController.buscarTodos;
         
         return res.json(buscaCarros);
 
