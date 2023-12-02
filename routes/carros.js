@@ -1,7 +1,7 @@
 //functionality of a route
 
 const carros = require("express").Router();
-const { CarroController } = require("../controllers");
+const { CarroController } = require("../controllers/CarroController");
 
 carros.get("/carros", async function (req, res) {
 
