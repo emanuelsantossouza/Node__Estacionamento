@@ -7,17 +7,23 @@ module.exports = {
         console.log("Entrou na funcção buscarTodos");
 
         let json = { error: '', result: [] };
-        
+    
+        try {
+            let carros = await CarroService.buscarTodos();
 
-        let carros = await CarroService.buscarTodos();
+            for (let i in carros) {
+                json.result.push({
+                    codigo: carros[i].codigo,
+                    descricao: carros[i].modelo  // Corrigi o nome da propriedade
+                });
+            }
 
-        for (let i in carros) {
-            json.result.push({
-                codigo: carros[i].codigo,
-                deescricao: carros[i].modelo
-            });
+            res.json(json);  // Corrigi a chamada para res.json()
+        } catch (error) {
+            console.error(error);
+            json.error = 'Erro ao buscar carros';
+            res.status(500).json(json);
         }
-        return json(json)
     },
 
     buscarUm: async (req, res) => {
