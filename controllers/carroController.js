@@ -20,7 +20,7 @@ module.exports = {
             };
 
             console.log(json.result);
-            return res.json(json);
+            return res(json);
         } catch (error) {
             console.log("Erro ao buscar carros");
             console.log(error);
