@@ -1,7 +1,6 @@
-const express = require("express");
-const app = express();
-
+const app = require("../app");
 const route = require("../routes/carros");
 
 app.use("/api", route);
 
+module.exports = app;
