@@ -2,7 +2,7 @@
 
 const carros = require("express").Router();
 
-carros.get("/books", async function (req, res) {
+carros.get("/carros", async function (req, res) {
     res.send([
         { carroName: "Book Ben", carroId: "xcvrgf" },
         { carroName: "Book Boom", carroId: "iyuitr" },
