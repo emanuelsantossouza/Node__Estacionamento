@@ -11,11 +11,12 @@ carros.get("/carros", async function (req, res) {
         let bucarCarros = await CarroService.buscarTodos();
 
         // Construa o objeto JSON de resposta
-         json = {
+        json = {
             error: '',
-             result: bucarCarros.map(carro => ({
+            result: bucarCarros.map(carro => ({
                 codigo: carro.codigo,
-                descricao: carro.modelo
+                descricao: carro.modelo,
+                placa: carro.placa
             }))
         };
         console.log(`${json}`)
