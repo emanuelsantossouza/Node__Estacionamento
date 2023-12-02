@@ -1,6 +1,5 @@
 const CarroService = require('../services/CarroService');
 
-
 module.exports = {
     buscarTodos: async (req, res) => {
         let json = { error: '', result: [] };
