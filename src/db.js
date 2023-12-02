@@ -1,7 +1,5 @@
 const mysql = require('mysql2');
 
-let port = '52159'
-
 
 const connection = mysql.createConnection({
     host: `monorail.proxy.rlwy.net`,

@@ -4,7 +4,7 @@ const express = require('express');
 const cors = require('cors'); // Permite acesso para autorizar o uso da API
 const bodyParser = require('body-parser'); // Permite transformar o corpo de um requisição em varios outros formatos
 
-const routes = require('./route');
+const routes = require('../routes/router');
 
 
 

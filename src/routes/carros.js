@@ -1,9 +1,17 @@
 const CarroService = require('../services/CarroService');
 
+app.get('/carros', (req, res) => {
+    res.send('Hello World!');
+    console.log('Hello World!');
+})
+
+
+
+
 module.exports = {
     buscarTodos: async (req, res) => {
         let json = { error: '', result: [] };
-        
+
 
         let carros = await CarroService.buscarTodos();
 
