@@ -1,12 +1,24 @@
-const express = require('express');
+"use strict";
+require("dotenv").config();
+
+const express = require("express");
+const cors = require("cors");
+const helmet = require("helmet");
+
+var allowedOrigins = ["https://node-estacionamento.vercel.app/"];
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Operation not allowed'))
+    }
+  }
+} 
+
 const app = express();
 
-const cors = require('cors'); // Permite acesso para autorizar o uso da API
-const bodyParser = require('body-parser'); // Permite transformar o corpo de um requisição em varios outros formatos
-const router = require('../routes');
+app.use(helmet());
+app.use(cors(corsOptions));
 
-app.use(cors()); // Autoriza o uso da API com o cors
-app.use(bodyParser.urlencoded({ extended: false })); // Criando o nosso middleware body
-
-app.use(router); // Usando o nosso middleware router
 module.exports = app;
