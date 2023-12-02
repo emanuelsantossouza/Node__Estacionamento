@@ -17,7 +17,7 @@ module.exports = {
                 deescricao: carros[i].modelo
             });
         }
-        res.json(json);
+        return json(json)
     },
 
     buscarUm: async (req, res) => {
