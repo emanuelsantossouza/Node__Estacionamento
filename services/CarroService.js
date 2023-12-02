@@ -1,12 +1,19 @@
 const db = require('../db')
+
+console.log("Entrou no arquivo carroService.js");
+
 module.exports = {
     buscarTodos: () => {
+        console.log("Entrou na funcção buscarTodos do service carros");
+
         return new Promise((aceito, rejeitado) => {
 
             db.query('SELECT * FROM carros', (error, results) => {
                 if (error) { rejeitado(error); return; }
                 aceito(results);
             });
+
+            console.log("Fez a busca no banco de dados");
         });
     },
 

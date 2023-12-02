@@ -1,8 +1,11 @@
 const CarroService = require('../services/CarroService');
 
+console.log("Esta no arquivo carroController.js");
 
 module.exports = {
     buscarTodos: async (req, res) => {
+        console.log("Entrou na funcção buscarTodos");
+
         let json = { error: '', result: [] };
         
 
