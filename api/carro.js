@@ -1,14 +1,8 @@
-const app = require("../app");
+const express = require("express");
+const app = express();
 
-const carro = require("express").Router();
+const route = require("../routes/carro");
 
-carro.get("/carro", async function (req, res) {
-    const { carroId } = req.query;
-    if (carroId) {
-        res.status(200).send({ carroName: "Some Book", carroId: carroId });
-    } else {
-        res.send("No book ID");
-    }
-});
+app.use("/api", route);
 
 module.exports = app;

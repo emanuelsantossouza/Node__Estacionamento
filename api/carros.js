@@ -1,4 +1,6 @@
-const app = require("../app");
+const express = require("express");
+const app = express();
+
 const route = require("../routes/carros");
 
 app.use("/api", route);
