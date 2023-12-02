@@ -18,6 +18,8 @@ module.exports = {
                 });
             }
 
+            console.log(json.result)
+
             res.json(json);  // Corrigi a chamada para res.json()
         } catch (error) {
             console.error(error);
