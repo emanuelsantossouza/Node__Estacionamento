@@ -1,12 +1,14 @@
 //functionality of a route
 
 const carros = require("express").Router();
-const { CarroController } = require("../controllers/CarroController");
+const CarroController = require("../controllers/carroController");
 
 carros.get("/carros", async function (req, res) {
 
-    const chamaCarros = await CarroController.buscarTodos();
-    res.send(chamaCarros);
+    let buscaCarros = await CarroController.buscarTodos();
+    console.log(buscaCarros);
+
+    res.json(buscaCarros);
 
     res.send([
         { carroName: "Book Ben", carroId: "xcvrgf" },
