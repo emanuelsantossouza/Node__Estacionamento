@@ -6,11 +6,21 @@ const CarroService = require("../services/CarroService");
 carros.get("/carros", async function (req, res) {
     console.log("Entrou na funcção carros router");
 
+    let json = { error: '', result: {} };
     try {
         let bucarCarros = await CarroService.buscarTodos();
-        console.log(`${bucarCarros}`)
-        
-        return res.json(buscaCarros);
+
+        // Construa o objeto JSON de resposta
+         json = {
+            error: '',
+             result: bucarCarros.map(carro => ({
+                codigo: carro.codigo,
+                descricao: carro.modelo
+            }))
+        };
+        console.log(`${json}`)
+
+        return res.json(json);
 
     } catch (error) {
         console.log(error);
