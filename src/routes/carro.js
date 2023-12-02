@@ -1,9 +1,16 @@
 const CarroService = require('../services/CarroService');
+const carro = require("express").Router();
 
-app.get('/carros', (req, res) => {
-    res.send('Hello World!');
-    console.log('Hello World!');
-})
+
+carro.get("/carro", async function (req, res) {
+    const { carroId } = req.query;
+    if (carroId) {
+        res.status(200).send({ carroId: "VC chegou até aqui", carroId: carroId });
+    } else {
+        res.send("No book ID");
+    }
+});
+
 
 
 

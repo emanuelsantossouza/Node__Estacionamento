@@ -1,9 +1,6 @@
 const app = require('./app');
-const server = require('../local/server');
-
-
-
-
+const route = require('..routes/carros');
 
 module.exports = app;
-module.exports = server;
+
+app.use("/api/", route);
