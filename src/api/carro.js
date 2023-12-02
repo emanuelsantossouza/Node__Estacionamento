@@ -1,8 +1,9 @@
 const app = require('./app');
 const server = require('../server');
 
-app.get('/carros', (req, res) => { 
+app.get('/carro', (req, res) => { 
     res.send('Hello World!');
+    console.log('Hello World!');
 })
     
 
