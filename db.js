@@ -1,13 +1,13 @@
 const mysql = require('mysql2');
-
+env = require('dotenv').config();
 
 const connection = mysql.createConnection({
-    host: `monorail.proxy.rlwy.net`,
-    user: 'root',
-    database: 'railway',
-    password: 'g3Ce36afGcgHA-fCAfhDgg-3C6ddC2C1',
-    port: 21720,
-    uri: 'mysql://root:g3Ce36afGcgHA-fCAfhDgg-3C6ddC2C1@mysql.railway.internal:3306/railway'
+    host: process.env.HOST_DB,
+    user: process.env.USER_DB,
+    database: process.env.DATABASE_DB,
+    password: process.env.PASSWORD_DB,
+    port: process.env.PORT_DB,
+    uri: process.env.URL_DB
 });
 
 connection.query('SELECT *FROM carros', (error, resultados) => {
